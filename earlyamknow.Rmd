@@ -59,3 +59,24 @@ ggplot () + geom_map(data=fort2, map=fort2, aes(x=long, y=lat, group=group, map_
 ```
 
 
+```{r}
+map_sp2 <- readOGR("nhgis-shp/", "US_state_1790")
+class(map_sp2)
+str(map_sp2, max.level = 2)
+map_sp2@bbox
+map_sp2@proj4string
+head(map_sp2@data)
+plot(map_sp2)
+```
+
+1790 County Map of US from NHGIS
+```{r}
+map_sp3 <- readOGR("nhgis-shp/", "US_county_1790")
+class(map_sp3)
+str(map_sp3, max.level = 2)
+map_sp3@bbox
+map_sp3@proj4string
+head(map_sp3@data)
+plot(map_sp3)
+```
+
