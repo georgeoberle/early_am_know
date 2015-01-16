@@ -1,0 +1,46 @@
+---
+title: "earlyamknow"
+author: "George Oberle"
+date: "January 16, 2015"
+output: html_document
+---
+
+Using RStudio there are several packages that are useful to load.
+```{r}
+#Load tools
+library (sp)
+library (rgdal)
+library (rgeos)
+library (maptools)
+library (ggmap)
+library (ggplot2)
+library (mullenMisc)
+library (magrittr)
+library (stringr)
+library (dplyr)
+library (RColorBrewer)
+library (igraph)
+```
+
+```{r}
+schol_soc_geocoded <- read.csv("~/societiesnetwork/data/schol-soc-geocoded.csv")
+```
+
+```{r}
+#Get the Shape files read and make sure that they work using these commands.
+map_sp <- readOGR("nhgis-shp/", "state_1840")
+class(map_sp)
+str(map_sp, max.level = 2)
+map_sp@bbox
+map_sp@proj4string
+head(map_sp@data)
+plot(map_sp)
+
+map1840<- readOGR ("nhgis-shp" , "state_1840")
+fort2<- fortify (map1840)
+```
+
+```{r}
+ggplot () + geom_map(data=fort2, map=fort2, aes(x=long, y=lat, group=group, map_id=id), color="grey", fill="white") +geom_point(data=schol_soc_geocoded, size=3, aes (x=lon, y=lat, color=Society) ) + coord_map() +ggtitle('Early American Learned Societies by Type 1768-1848')
+```
+
