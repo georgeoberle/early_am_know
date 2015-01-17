@@ -80,3 +80,65 @@ head(map_sp3@data)
 plot(map_sp3)
 ```
 
+```{r}
+map_sp4 <- readOGR("nhgis-shp/", "US_county_1800")
+class(map_sp4)
+str(map_sp4, max.level = 2)
+map_sp4@bbox
+map_sp4@proj4string
+head(map_sp4@data)
+plot(map_sp4)
+```
+
+```{r}
+map_sp5 <- readOGR("nhgis-shp/", "US_state_1800")
+class(map_sp5)
+str(map_sp5, max.level = 2)
+map_sp5@bbox
+map_sp5@proj4string
+head(map_sp5@data)
+plot(map_sp5)
+```
+
+```{r}
+map_sp6 <- readOGR("nhgis-shp/", "US_state_1810")
+class(map_sp6)
+str(map_sp6, max.level = 2)
+map_sp6@bbox
+map_sp6@proj4string
+head(map_sp6@data)
+plot(map_sp6)
+```
+
+```{r}
+map_sp7 <- readOGR("nhgis-shp/", "US_county_1810")
+class(map_sp7)
+str(map_sp7, max.level = 2)
+map_sp7@bbox
+map_sp7@proj4string
+head(map_sp7@data)
+plot(map_sp7)
+```
+
+```{r}
+map_sp8 <- readOGR("nhgis-shp/", "US_state_1820")
+class(map_sp8)
+str(map_sp8, max.level = 2)
+map_sp8@bbox
+map_sp8@proj4string
+head(map_sp8@data)
+plot(map_sp8)
+```
+
+```{r}
+
+map_sp9 <- readOGR("nhgis-shp/", "US_county_1820_conflated")
+class(map_sp9)
+str(map_sp9, max.level = 2)
+map_sp9@bbox
+map_sp9@proj4string
+head(map_sp9@data)
+plot(map_sp9)
+
+```
+
